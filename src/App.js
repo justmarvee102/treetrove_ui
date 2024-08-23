@@ -5,7 +5,6 @@ import { images } from './constants';
 import './App.scss';
 
 const slide = [
-
   images.sign_up1,
   images.welcome_screen,
   images.log_in,
@@ -36,6 +35,18 @@ export default function App() {
           />
         ))}
       </ImageSliders>
+      <div className="copyright">
+        <p
+          className="p-text hover:scale-75
+        hover:cursor-pointer hover:rotate-2 px-8 py-0.3"
+        >
+          @2024, All rights reserved
+        </p>
+
+        <p className="p-text hover:scale-75 hover:bx-blue-500 hover:cursor-pointer hover:rotate-2 px-8 py-0.3">
+          Designed And Developed From Scratch By Marvy.
+        </p>
+      </div>
     </div>
   );
 }

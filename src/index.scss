@@ -19,6 +19,14 @@
   --white-color: #ffffff;
 }
 
+.dark {
+  --bg-color: #333;
+  --gray-color: #bab8b8;
+  --text-color: #fff;
+  --secondary-color: #23abff;
+  /* Define other dark theme variables */
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

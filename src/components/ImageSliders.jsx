@@ -37,7 +37,7 @@ function ImageSliders({
     },
     {
       title: 'Project Duration',
-      description: ['January 2024-May 2024'],
+      description: ['November 2023-May 2024'],
     },
 
     {
@@ -133,7 +133,7 @@ function ImageSliders({
   return (
     <>
       <div className="flex flex-col items-center justify-center p-6 sm:p-10 lg:p-10 min-h-screen">
-        <div className="flex flex-col lg:flex-row  items-center justify-center max-w-4xl w-full box overflow-hidden shadow-lg bg-white sm:mt-14 lg:mt-14 mt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-5xl w-full box overflow-hidden shadow-lg bg-white dark:bg-gray-800 sm:mt-14 lg:mt-14 mt-20">
           <div className="relative lg:w-2/6 overflow-hidden sm:w-2/5 w-2/4 ">
             <motion.div
               className=" flex transition-transform ease-out duration-500 h-full mt-10"
@@ -152,13 +152,13 @@ function ImageSliders({
             <div className="absolute inset-0 flex items-center justify-between p-4">
               <button
                 onClick={prev}
-                className="p-2 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+                className="p-2 rounded-full shadow bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white hover:bg-white hover:dark:bg-gray-600"
               >
                 <ChevronLeft size={22} />
               </button>
               <button
                 onClick={next}
-                className="p-2 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+                className="p-2 rounded-full shadow bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white hover:bg-white hover:dark:bg-gray-600"
               >
                 <ChevronRight size={22} />
               </button>
@@ -168,14 +168,16 @@ function ImageSliders({
                 <div
                   key={i}
                   className={`transition-all w-2 h-2 rounded-full ${
-                    curr === i ? 'bg-black p-1' : 'bg-black bg-opacity-30'
+                    curr === i
+                      ? 'bg-black p-1 dark:bg-white'
+                      : 'bg-black dark:bg-white bg-opacity-30 dark:bg-opacity-30'
                   }`}
                 />
               ))}
             </div>
           </div>
-          <div className="lg:w-3/6 p-6 sm:w-2/2">
-            <div className="bold-text mb-3">
+          <div className="lg:w-3/6 p-6 sm:w-2/2 ">
+            <div className="bold-text mb-3 dark:text-gray-200">
               UI Design for TreeTrove: Fruit Tree Planting App
             </div>
             <p className="s-text mb-4">
@@ -194,10 +196,14 @@ function ImageSliders({
               impact on the environment.
             </p>
             <div className="flex flex-col mb-3">
-              <span className="font-semibold">Organization Name:</span>
+              <span className="font-semibold dark:text-gray-200">
+                Organization Name:
+              </span>
               <span className="s-text">Technovation Girls</span>
             </div>
-            <div className="font-semibold mb-1">Tools Used:</div>
+            <div className="font-semibold mb-1 dark:text-gray-200">
+              Tools Used:
+            </div>
             <div className="flex flex-row gap-4 mb-4">
               <div className="flex flex-col items-center">
                 <img src={images.canva} alt="Canva" className="w-7 h-7 mt-1" />
@@ -221,7 +227,9 @@ function ImageSliders({
               </div>
             </div>
             <div className="flex-col flex mb-4">
-              <div className="font-semibold">Color Palette:</div>
+              <div className="font-semibold dark:text-gray-200">
+                Color Palette:
+              </div>
               <h2 className="s-text mb-2">
                 Natural and vibrant tones to reflect the environment and
                 fruitfulness:
@@ -278,10 +286,12 @@ function ImageSliders({
             </div>
 
             <div className="flex flex-col mb-4">
-              <div className="font-semibold mb-2">Project Link:</div>
+              <div className="font-semibold mb-2 dark:text-gray-200">
+                Project Link:
+              </div>
               <a
                 href="https://www.figma.com/proto/g0znqOFFcT9AUpnkfhjHp4/Untitled?node-id=22-112&t=Uez8rsgEYRJ1H97J-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=573%3A810"
-                className="text-blue-500 underline"
+                className="text-blue-500 underline dark:text-blue-300"
               >
                 *Click here to view full iteration of TreeTrove UI*
               </a>
@@ -290,12 +300,15 @@ function ImageSliders({
         </div>
       </div>
 
-      <h1 className="font-semibold text-center ">Other Important Info:</h1>
+      <h1 className="font-semibold text-center dark:text-gray-200">
+        Other Important Info:
+      </h1>
+
       <div className="flex flex-wrap justify-center gap-5 w-full p-6 sm:p-10 lg:p-6">
         {items.map((item, index) => (
           <motion.div
             key={index}
-            className="flex flex-col overflow-hidden shadow-lg bg-white w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
+            className="flex flex-col overflow-hidden shadow-lg bg-gray-300 dark:bg-gray-800 w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
             variants={containerVariants}
             whileDrag={{ scale: 1.05 }}
             whileHover={{
@@ -303,23 +316,25 @@ function ImageSliders({
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               rotate: 10,
               scale: 1.05,
-              textColor: 'white',
-              backgroundColor: 'lightgreen',
             }}
             whileTap={{
               scaleX: -1,
               rotate: 10,
               y: -10,
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
-              backgroundColor: 'seagreen',
             }}
             animate="visible"
             style={{ cursor: 'pointer' }}
             initial="hidden"
           >
-            <div className="font-semibold mb-2 text-center">{item.title}</div>
+            <div className="font-semibold mb-2 text-center text-black dark:text-white">
+              {item.title}
+            </div>
             {item.description.map((desc, i) => (
-              <h2 key={i} className="h-text text-center">
+              <h2
+                key={i}
+                className="h-text text-center text-black dark:text-white"
+              >
                 {desc}
               </h2>
             ))}
@@ -327,11 +342,11 @@ function ImageSliders({
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-7 w-full px-6 sm:px-10 lg:px-14 py-4 sm:py-8 lg:py-10">
+      <div className="flex flex-wrap justify-center gap-5 w-full p-6 sm:p-10 lg:p-6">
         {items2.map((item2, index) => (
           <motion.div
             key={index}
-            className="flex flex-col overflow-hidden shadow-lg bg-white w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
+            className="flex flex-col overflow-hidden shadow-lg bg-gray-300 dark:bg-gray-800 w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
             variants={containerVariants}
             whileDrag={{ scale: 1.05 }}
             whileHover={{
@@ -339,22 +354,25 @@ function ImageSliders({
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               rotate: 10,
               scale: 1.05,
-              backgroundColor: 'lightcyan',
             }}
             whileTap={{
               scaleX: -1,
               rotate: 10,
               y: -10,
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
-              backgroundColor: 'teal',
             }}
             animate="visible"
             style={{ cursor: 'pointer' }}
             initial="hidden"
           >
-            <div className="font-semibold mb-2 text-center">{item2.title}</div>
+            <div className="font-semibold mb-2 text-center text-black dark:text-white">
+              {item2.title}
+            </div>
             {item2.description.map((desc, i) => (
-              <h2 key={i} className="h-text text-center">
+              <h2
+                key={i}
+                className="h-text text-center text-black dark:text-white"
+              >
                 {desc}
               </h2>
             ))}
@@ -362,11 +380,11 @@ function ImageSliders({
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-7 w-full px-6 sm:px-10 lg:px-14 py-4 sm:py-8 lg:py-10">
+      <div className="flex flex-wrap justify-center gap-5 w-full p-6 sm:p-10 lg:p-6">
         {items3.map((item3, index) => (
           <motion.div
             key={index}
-            className="flex flex-col overflow-hidden shadow-lg bg-white w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
+            className="flex flex-col overflow-hidden shadow-lg bg-gray-300 dark:bg-gray-800 w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
             variants={containerVariants}
             whileDrag={{ scale: 1.05 }}
             whileHover={{
@@ -374,25 +392,25 @@ function ImageSliders({
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               rotate: 10,
               scale: 1.05,
-              backgroundColor: 'lightsalmon',
             }}
             whileTap={{
               scaleX: -1,
               rotate: 10,
               y: -10,
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
-              backgroundColor: 'salmon',
             }}
             animate="visible"
             style={{ cursor: 'pointer' }}
             initial="hidden"
           >
-            <div className="font-semibold  text-center">{item3.title}</div>
-            <div className="font-light mb-2 text-center text-gray-500 s-text">
-              {item3.title2}
+            <div className="font-semibold mb-2 text-center text-black dark:text-white">
+              {item3.title}
             </div>
             {item3.description.map((desc, i) => (
-              <h2 key={i} className="h-text text-center">
+              <h2
+                key={i}
+                className="h-text text-center text-black dark:text-white"
+              >
                 {desc}
               </h2>
             ))}
@@ -400,11 +418,11 @@ function ImageSliders({
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-7 w-full px-6 sm:px-10 lg:px-14 py-4 sm:py-8 lg:py-10">
+      <div className="flex flex-wrap justify-center gap-5 w-full p-6 sm:p-10 lg:p-6">
         {items4.map((item4, index) => (
           <motion.div
             key={index}
-            className="flex flex-col overflow-hidden shadow-lg bg-white w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
+            className="flex flex-col overflow-hidden shadow-lg bg-gray-300 dark:bg-gray-800 w-full sm:w-5/12 lg:w-1/4 items-center p-6 hover-text"
             variants={containerVariants}
             whileDrag={{ scale: 1.05 }}
             whileHover={{
@@ -412,22 +430,25 @@ function ImageSliders({
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               rotate: 10,
               scale: 1.05,
-              backgroundColor: 'lightyellow',
             }}
             whileTap={{
               scaleX: -1,
               rotate: 10,
               y: -10,
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
-              backgroundColor: 'goldenrod',
             }}
             animate="visible"
             style={{ cursor: 'pointer' }}
             initial="hidden"
           >
-            <div className="font-semibold mb-2 text-center">{item4.title}</div>
+            <div className="font-semibold mb-2 text-center text-black dark:text-white">
+              {item4.title}
+            </div>
             {item4.description.map((desc, i) => (
-              <h2 key={i} className="h-text text-center">
+              <h2
+                key={i}
+                className="h-text text-center text-black dark:text-white"
+              >
                 {desc}
               </h2>
             ))}

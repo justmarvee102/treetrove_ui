@@ -1,4 +1,5 @@
 import logo from '../assets/logo.png';
+import logo1 from '../assets/logo1.png';
 
 import sign_up1 from '../assets/sign_up1.png';
 import welcome_screen from '../assets/welcome_screen.png';
@@ -24,6 +25,7 @@ import figma from '../assets/figma.png';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   logo,
+  logo1,
   figma,
   canva,
   photoshop,
